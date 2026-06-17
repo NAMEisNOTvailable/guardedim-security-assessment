@@ -1,0 +1,17 @@
+{
+  "operation_mode": "server",
+  "self_server_wireguard_ip": "10.0.12.1",
+  "self_server_wireguard_private_key": "REPLACE_WITH_LOCAL_PRIVATE_KEY",
+  "self_server_wireguard_listen_port": 51820,
+  "self_server_wireguard_mtu": 1500,
+  "self_server_public_ip": "203.0.113.10",
+  "self_client_wireguard_ip": "10.0.12.10",
+  "self_client_wireguard_private_key": "REPLACE_WITH_LOCAL_CLIENT_PRIVATE_KEY",
+  "self_client_wireguard_mtu": 1500,
+  "self_client_localdb": ".guardedim/client.db",
+  "database_host": "127.0.0.1",
+  "database_port": 26257,
+  "database_cert_directory": "./db_certs",
+  "database_dbname": "defaultdb",
+  "database_username": "guardedim_user"
+}

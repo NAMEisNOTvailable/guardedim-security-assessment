@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Go build outputs
+/gdim
+/gdim.exe
+/gdimd
+/gdimd.exe
+*.test
+
+# Local configuration and secrets
+.env
+*.env
+guarded_im_config.json
+keys/
+server/keys/
+db_certs/
+*.pem
+*.key
+*.crt
+*.cert
+
+# Runtime output
+chat_media/
+*.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
