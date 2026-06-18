@@ -52,7 +52,7 @@ flowchart TB
 - The intended control plane used mTLS so only clients with CA-signed certificates could access control functionality.
 - The application layer used per-session AES-GCM keys exchanged through RSA and tested through a localhost Python prototype.
 - The localhost prototype enabled early one-to-one chat, group chat, and file-transfer testing before the full connection layer was complete.
-- The Go control-plane code models database-backed server/user records, WireGuard peer updates, and service startup paths. It is included as a compile-checked prototype, not as a packaged production deployment.
+- The Go control-plane code models database-backed server/user records, WireGuard peer updates, and service startup paths. It is included as a compile-checked control-plane prototype.
 
 ## High-Level Flow
 
@@ -76,4 +76,4 @@ The repository is useful for reviewing:
 - prototype limitations
 - mitigation documentation quality
 
-It should not be treated as a production-ready secure messenger.
+The project scope is a localhost secure-programming lab, with deployment concerns documented separately.

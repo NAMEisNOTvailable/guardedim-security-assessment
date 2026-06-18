@@ -1,6 +1,6 @@
 # Mitigation Comparison
 
-GuardedIM intentionally keeps two protocol-level weaknesses in the localhost prototype so reviewers can reproduce the failure mode and reason about a safer design. The hardening items below show how the same codebase separates deliberate lab targets from ordinary implementation risks.
+GuardedIM intentionally keeps two protocol-level weaknesses in the localhost prototype so the failure mode can be reproduced and mapped to safer designs. The hardening items below show how the same codebase separates deliberate lab targets from ordinary implementation risks.
 
 ## Protocol Findings
 

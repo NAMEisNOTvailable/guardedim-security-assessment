@@ -4,7 +4,7 @@
 
 GuardedIM is a local security-assessment lab for a decentralised secure messaging prototype. It combines a runnable Python chat client/server, AES-GCM encrypted payloads, RSA-based session-key exchange, and Go control-plane components for WireGuard-oriented relay management.
 
-The lab intentionally keeps two protocol flaws for reviewers to reproduce, explain, and map to mitigations in a safe localhost setting. It is designed for secure-programming review, not production deployment.
+The lab keeps two protocol flaws as local assessment targets that can be reproduced, explained, and mapped to mitigations in a safe localhost setting. The project is scoped as a secure-programming review lab.
 
 ## What This Demonstrates
 
@@ -58,7 +58,7 @@ server/      Python server prototype and Go server/database control helpers
 common/      Shared Python encryption utilities
 cmd/gdim/    Go CLI control commands
 cmd/gdimd/   Go daemon entry point
-docs/        Architecture notes for reviewers
+docs/        Architecture notes and security findings
 labs/        Guided vulnerable-lab challenges
 demos/       Local proof-of-concept demos for the two lab findings
 ```
@@ -130,7 +130,7 @@ go build -o gdim ./cmd/gdim/*.go
 go build -o gdimd ./cmd/gdimd/*.go
 ```
 
-The Go code is kept as a control-plane prototype. It covers configuration parsing, database-backed server/user records, WireGuard peer setup paths, and the mTLS-oriented control server. CI runs lightweight Go unit and compile checks; production deployment would still need operational secret management, certificate lifecycle handling, and environment-specific service packaging.
+The Go code is kept as a control-plane prototype. It covers configuration parsing, database-backed server/user records, WireGuard peer setup paths, and the mTLS-oriented control server. Automated checks run lightweight Go unit and compile checks; a deployed system would require operational secret management, certificate lifecycle handling, and environment-specific service packaging.
 
 ## Lab Challenges
 
@@ -162,7 +162,7 @@ See [Local Vulnerability Demos](demos/README.md) for details.
 
 ## Security Review Focus
 
-Reviewers can focus on:
+Security review focus:
 
 - Which issues are intentionally vulnerable lab targets for the assessment?
 - How is server identity validated before accepting public keys?
@@ -191,4 +191,4 @@ Original source code and documentation are licensed under the MIT License.
 
 ## Status
 
-Academic secure-programming prototype. The code is intended for security assessment and mitigation review, not production deployment.
+Academic secure-programming prototype focused on security assessment and mitigation review.

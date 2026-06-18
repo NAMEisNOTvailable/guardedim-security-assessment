@@ -39,10 +39,10 @@ The project is best reviewed through these security themes:
 
 ## Secret Handling Boundary
 
-Runtime keys and database certificates are represented as local files or process environment values for the lab. This keeps the prototype easy to inspect and run locally, but it is not a production secret-management model.
+Runtime keys and database certificates are represented as local files or process environment values for the lab. This keeps the prototype easy to inspect and run locally while documenting the remaining secret-management work for deployed systems.
 
 For a production service, the remaining work would be to move private keys and database credentials into a managed secret store or systemd credentials, enforce restrictive file permissions, define certificate rotation, and avoid exposing long-lived private material through process-level environment variables.
 
 ## Production Readiness
 
-This code is not production-ready. It is intended for local vulnerability review, mitigation analysis, and secure-programming discussion.
+This code is scoped for local vulnerability review, mitigation analysis, and secure-programming discussion.

@@ -1,6 +1,6 @@
 # Security Assessment Findings
 
-GuardedIM is a small vulnerable assessment lab, not production messaging software. The current codebase intentionally retains two protocol-level findings for attack analysis and mitigation reasoning. Other implementation issues are treated as hardening items rather than lab targets.
+GuardedIM is a small vulnerable assessment lab for secure-messaging review. The current codebase intentionally retains two protocol-level findings for attack analysis and mitigation reasoning. Other implementation issues are treated as hardening items outside the two lab targets.
 
 ## Finding Matrix
 
@@ -18,4 +18,4 @@ GuardedIM is a small vulnerable assessment lab, not production messaging softwar
 
 The MITM key-replacement issue and the handshake framing mismatch should not be described as accidental bugs. They are intentionally planted assessment targets.
 
-The SQL DDL comma, WireGuard daemon argument wiring, message-size constant, nonce-store race, sender binding, duplicate-name handling, and file-path handling are ordinary implementation issues. They are not intentionally retained assessment targets, so they can be fixed without changing the lab exercise.
+The SQL DDL comma, WireGuard daemon argument wiring, message-size constant, nonce-store race, sender binding, duplicate-name handling, and file-path handling are ordinary implementation issues. Fixing them does not change the two retained lab exercises.
