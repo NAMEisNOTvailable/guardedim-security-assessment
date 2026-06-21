@@ -31,7 +31,7 @@ To stay current with `main`:
 - Include a clear title and short description of what changed and why.
 - Tag a reviewer when your PR is ready for review.
 
-## Public Repository Rules
+## Repository Hygiene
 
 - Do not commit `.env` files, private keys, certificates, generated binaries, local database material, or test media containing personal information.
 - Keep example configuration values clearly non-production.

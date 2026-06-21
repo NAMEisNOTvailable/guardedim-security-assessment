@@ -2,36 +2,36 @@
 
 [![Smoke tests](https://github.com/NAMEisNOTvailable/guardedim-security-assessment/actions/workflows/smoke.yml/badge.svg)](https://github.com/NAMEisNOTvailable/guardedim-security-assessment/actions/workflows/smoke.yml)
 
-GuardedIM is a local security-assessment lab for a decentralised secure messaging prototype. It combines a runnable Python chat client/server, AES-GCM encrypted payloads, RSA-based session-key exchange, and Go control-plane components for WireGuard-oriented relay management.
+GuardedIM is a runnable security review project for a small encrypted messaging system. It includes a Python chat client/server, encrypted message and file-transfer paths, and Go control-plane components for account, server, and network-management experiments.
 
-The lab keeps two protocol flaws as local assessment targets that can be reproduced, explained, and mapped to mitigations in a safe localhost setting. The project is scoped as a secure-programming review lab.
+The lab keeps two protocol-level weaknesses available for local testing, evidence collection, and mitigation mapping while keeping the scope on localhost review.
 
 ## What This Demonstrates
 
-- Applied cryptography review across RSA key exchange, AES-GCM session encryption, and message framing.
-- Local proof-of-concept demos for unauthenticated key exchange and handshake desynchronisation.
-- Secure-programming hardening around sender binding, filename validation, dangerous file extensions, and frame-size limits.
+- Reviewed encrypted chat behaviour across key exchange, AES-GCM payload handling, message framing, and file transfer.
+- Built localhost proof-of-concept demos for two protocol-level weaknesses.
+- Hardened adjacent implementation risks, including sender spoofing, duplicate usernames, unsafe filenames, dangerous file extensions, and oversized frames.
 - Python runtime tests plus Go compile/unit checks through GitHub Actions.
 
 ## Project Snapshot
 
 | Area | Summary |
 | --- | --- |
-| Domain | Secure messaging, applied cryptography, secure programming |
-| Client/server prototype | Python socket service and Tkinter chat client |
-| Control components | Go CLI and daemon code for server/user management, WireGuard peer updates, and mTLS-oriented control-plane design |
-| Security mechanisms | RSA session-key exchange, AES-GCM message/file encryption paths, and mTLS-oriented control-plane design |
-| Networking design | WireGuard-oriented server connectivity and peer management concepts, with a localhost Python prototype for testing |
+| Domain | Secure messaging security review and applied cryptography |
+| Runnable target | Python socket service and Tkinter chat client with encrypted messages and file transfer |
+| Main findings | Unauthenticated key exchange and handshake-framing desynchronisation |
+| Evidence | Local demos, guided lab notes, mitigation write-ups, Python tests, and Go checks |
+| Control components | Go CLI and daemon code for server/user management, database access, and WireGuard peer-update experiments |
 | Data layer | CockroachDB/PostgreSQL-style metadata storage through Go `pgx` |
-| Lab format | Local vulnerable target with guided protocol-analysis challenges |
+| Lab format | Safe localhost target with guided protocol-analysis challenges |
 
 ## Engineering Focus
 
-- Python socket server and Tkinter client for one-to-one chat, group chat, and file transfer.
-- RSA-based session-key exchange with AES-GCM encrypted message and file payloads.
-- Go control components for server setup, user registration, database access, and WireGuard peer updates.
-- Two intentionally vulnerable lab targets: unauthenticated key exchange and handshake protocol desynchronisation.
-- Security review coverage for MITM exposure, message framing, authentication boundaries, file handling, secret storage, and denial-of-service behaviour.
+- Built a Python socket server and Tkinter client for one-to-one chat, group chat, and file transfer.
+- Implemented RSA session-key setup and AES-GCM encryption paths so the security issues can be tested in a real flow.
+- Kept two intentionally vulnerable lab targets: unauthenticated key exchange and handshake protocol desynchronisation.
+- Added hardening around sender identity, duplicate usernames, file handling, and encrypted-frame size limits.
+- Maintained Go control-plane components for server setup, user registration, database access, and WireGuard peer-update experiments.
 
 ## Architecture at a Glance
 
@@ -161,8 +161,6 @@ python demos/handshake_desync_demo.py
 See [Local Vulnerability Demos](demos/README.md) for details.
 
 ## Security Review Focus
-
-Security review focus:
 
 - Which issues are intentionally vulnerable lab targets for the assessment?
 - How is server identity validated before accepting public keys?
